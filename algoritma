@@ -1,0 +1,49 @@
+Berikut algoritma umum untuk sistem parkir yang mencatat waktu masuk dan waktu keluar kendaraan:
+
+1. Inisialisasi program dan database:
+   - Buat file database SQLite untuk menyimpan data kendaraan yang masuk dan keluar.
+   - Buat tabel dalam database dengan kolom-kolom berikut:
+     - Nomor Plat Kendaraan (nomor_plat, tipe TEXT)
+     - Waktu Masuk (waktu_masuk, tipe DATETIME)
+     - Waktu Keluar (waktu_keluar, tipe DATETIME)
+     - Keterangan (keterangan, tipe TEXT)
+
+2. Tampilkan antarmuka pengguna:
+   - Buat antarmuka pengguna (GUI) untuk memungkinkan pengguna memasukkan nomor plat kendaraan.
+   - Tampilkan dua mode input: Manual dan Kamera.
+
+3. Mode Manual (Input Pengguna):
+   - Pengguna memasukkan nomor plat kendaraan secara manual melalui antarmuka.
+   - Saat pengguna menekan tombol "Masuk", catat waktu masuk kendaraan, nomor plat, dan keterangan waktu dalam database.
+
+4. Mode Kamera (Deteksi Teks dari Gambar Kamera):
+   - Jika mode Kamera dipilih, aktifkan kamera.
+   - Tangkap gambar dari kamera secara berkala.
+   - Gunakan modul pemrosesan gambar (seperti OpenCV) untuk mendeteksi nomor plat kendaraan dari gambar.
+   - Catat nomor plat dan waktu masuk kendaraan dalam database.
+
+5. Keluar Parkir (Input Pengguna):
+   - Pengguna memasukkan nomor plat kendaraan saat keluar parkir melalui antarmuka.
+   - Cari entri terbaru dalam database dengan nomor plat tersebut.
+   - Catat waktu keluar kendaraan.
+   - Hitung durasi parkir (selisih antara waktu keluar dan waktu masuk).
+   - Catat durasi parkir dalam database.
+
+6. Tampilkan Data Parkir:
+   - Tampilkan data parkir yang ada dalam database, termasuk nomor plat, waktu masuk, waktu keluar (jika ada), dan durasi parkir.
+
+7. Penanganan Kesalahan:
+   - Tangani kesalahan input yang mungkin terjadi (misalnya, nomor plat tidak valid).
+   - Tangani kesalahan terkait database.
+
+8. Simpan dan Keluar:
+   - Simpan perubahan dalam database saat program berhenti.
+   - Berikan opsi kepada pengguna untuk menghentikan program.
+
+9. Ulangi Langkah 3 hingga 8 secara berkala:
+   - Ulangi proses deteksi nomor plat dan penanganan masuk/keluar kendaraan selama program berjalan.
+
+10. Tutup Program:
+   - Ketika pengguna keluar dari program, pastikan untuk menutup koneksi ke database dan mematikan kamera (jika digunakan).
+
+Itu adalah algoritma umum untuk sistem parkir. Anda dapat mengimplementasikannya dalam bahasa pemrograman Python dengan menggunakan modul-modul seperti SQLite untuk database, OpenCV untuk pemrosesan gambar, dan PyQt atau Kivy untuk pembuatan antarmuka pengguna.
