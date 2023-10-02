@@ -35,11 +35,11 @@ class ParkirApp(QMainWindow):
 
         self.enter_button = QPushButton('Masuk', self)
         self.enter_button.move(20, 140)
-        self.enter_button.clicked.connect(self.masuk_parkir)
+        self.enter_button.clicked.connect(self.masuk_parkir)  # Perbaiki fungsi yang terhubung
 
         self.exit_button = QPushButton('Keluar', self)
         self.exit_button.move(180, 140)
-        self.exit_button.clicked.connect(self.keluar_parkir)
+        self.exit_button.clicked.connect(self.keluar_parkir)  # Perbaiki fungsi yang terhubung
 
         self.status_label = QLabel('', self)
         self.status_label.move(20, 180)
@@ -207,3 +207,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
